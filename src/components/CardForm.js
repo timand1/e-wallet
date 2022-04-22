@@ -3,7 +3,7 @@ import './CardForm.css';
 import { useState } from 'react';
 
 function CardForm(props) {
-    let { addNewCard, allCards, setNewCard } = props;
+    let { addNewCard, setNewCard } = props;
 
     const [cardHolder, setCardHolder] = useState('');
     const [cardNumber, setCardNumber] = useState('');
