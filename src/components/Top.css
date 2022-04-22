@@ -1,0 +1,21 @@
+.header {
+    text-align: center;
+}
+
+.header h1,
+.header p {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header h1 {
+    font-size: 35px;
+    font-weight: 700;
+    max-width: 60%;
+    margin: 0 auto;
+}
+
+.header p {
+    font-size: 12px;
+    font-weight: 600;
+    color: #2222227a
+}

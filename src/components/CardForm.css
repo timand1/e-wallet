@@ -1,0 +1,46 @@
+.card__form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 3rem 0 1rem 0;
+}
+
+.input__container {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.input__container--row {
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.input__container--row input {
+    height: 100%;
+    width: 100%;
+}
+
+label {
+    font-size: 12px;
+}
+
+input,
+select {
+    font-size: 18px;
+    padding: 1rem;
+    border-radius: 8px;
+    outline: none;
+    border: 1px solid #000000b0;
+}
+
+option {
+    font-size: 14px;
+}
+
+.button__add {
+    border: none;
+    color: #fff;
+    background-color: #000000;
+    margin-top: 2rem;
+}

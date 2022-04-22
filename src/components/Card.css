@@ -1,0 +1,43 @@
+.card {
+    height: fit-content;
+    border-radius: .6rem;
+    box-shadow: 0 0 .5rem rgba(0, 0, 0, 0.4);
+    padding: 1rem;
+}
+
+.card__logos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__number {
+    font-size: 29px !important;
+    letter-spacing: 1px;
+    margin: 1rem 0;
+}
+
+.card__text-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card__text-label p {
+    margin: 0;
+    padding: 2px;
+}
+
+.card__text--valid {
+    text-align: end;
+}
+
+.card__text {
+    font-size: 18px;
+}
+
+.card__label {
+    font-size: 12px;
+}
+
+.card>* {
+    pointer-events: none;
+}

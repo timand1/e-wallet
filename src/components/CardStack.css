@@ -1,0 +1,5 @@
+.cards {
+    display: grid;
+    grid-auto-rows: 3.5rem;
+    margin: 2rem 0 16rem 0;
+}

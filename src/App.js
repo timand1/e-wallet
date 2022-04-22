@@ -1,23 +1,47 @@
-import logo from './logo.svg';
 import './App.css';
 
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+
+import Home from './views/Home';
+import AddCard from './views/AddCard';
+import ErrorPage from './views/ErrorPage';
+
 function App() {
+  const navigate = useNavigate();
+
+  const cards = JSON.parse(localStorage.getItem("cards") || "[]");
+
+  const [newCard, setNewCard] = useState({
+    cardnumber: 'XXXXXXXXXXXXXXXX',
+    cardholder: 'FIRSTNAME LASTNAME',
+    valid: 'MM/YY',
+    ccv: 'XXX',
+    vendor: 'AddCard',
+    id: 0
+  });
+
+  // Set allCards as localStorage arr or newCard if empty
+  const [allCards, setAllCards] = useState((cards.length > 0) ? cards : [newCard]);
+
+  // Update local storage with all cards
+  localStorage.setItem("cards", JSON.stringify(allCards));
+
+  function addNewCard(e) {
+    e.preventDefault();
+
+    setAllCards(prevAllCards => ([...prevAllCards, newCard]));
+
+    navigate('/');
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Routes>
+        <Route path='/' element={<Home allCards={allCards} />} />
+        <Route path='/add-card' element={<AddCard addNewCard={addNewCard} allCards={allCards} setNewCard={setNewCard} />} />
+        <Route path='*' element={<ErrorPage />} />
+      </Routes>
     </div>
   );
 }
