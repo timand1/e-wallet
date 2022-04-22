@@ -26,8 +26,12 @@ function Home(props) {
         localStorage.setItem("cards", JSON.stringify(cards));
 
         // If only the placeholder card remains, set it to the active card
-        if (allCards.length > 2) { setActive(1) } else { setActive(0) };
         setAllCards(cards)
+        if (cards.length > 1) {
+            setActive(1)
+        } else {
+            setActive(0)
+        };
     }
 
     return (

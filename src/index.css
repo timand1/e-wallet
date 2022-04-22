@@ -5,6 +5,11 @@
   font-family: 'PT Mono', monospace;
 }
 
+#root,
+body {
+  width: 100%;
+}
+
 body {
   min-height: 100vh;
   margin: 0;
