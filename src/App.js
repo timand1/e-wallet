@@ -26,7 +26,7 @@ function App() {
 
   // Update local storage with all cards
   localStorage.setItem("cards", JSON.stringify(allCards));
-
+  // localStorage.removeItem("cards")
   function addNewCard(e) {
     e.preventDefault();
 
@@ -38,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path='/' element={<Home allCards={allCards} />} />
+        <Route path='/' element={<Home allCards={allCards} cards={cards} setAllCards={setAllCards} />} />
         <Route path='/add-card' element={<AddCard addNewCard={addNewCard} allCards={allCards} setNewCard={setNewCard} />} />
         <Route path='*' element={<ErrorPage />} />
       </Routes>

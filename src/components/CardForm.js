@@ -18,7 +18,7 @@ function CardForm(props) {
             valid: cardValid,
             ccv: cardCcv,
             vendor: cardVendor,
-            id: allCards.length
+            id: cardNumber
         })
     };
 

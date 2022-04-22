@@ -9,15 +9,25 @@ import CardStack from '../components/CardStack';
 
 
 function Home(props) {
-    const { allCards } = props;
+    const { allCards, cards, setAllCards } = props;
     const navigate = useNavigate();
 
     // Set the newly added card as active
     const [active, setActive] = useState(allCards.length - 1);
 
     function activeCard(e) {
-        const activeId = parseInt(e.target.id)
+        // Finding index of the clicked card and set it as active
+        const activeId = allCards.findIndex((cardId => cardId.id === e.target.id));
         setActive(activeId)
+    }
+
+    function removeCard() {
+        cards.splice(active, 1)
+        localStorage.setItem("cards", JSON.stringify(cards));
+
+        // If only the placeholder card remains, set it to the active card
+        if (allCards.length > 2) { setActive(1) } else { setActive(0) };
+        setAllCards(cards)
     }
 
     return (
@@ -32,7 +42,10 @@ function Home(props) {
                     <CardStack allCards={allCards} activeCard={activeCard} active={active} />
                 </article>}
             </article>
-            <button className="button" onClick={() => { navigate('/add-card') }}>ADD A NEW CARD</button>
+            <article className="buttons">
+                <button className="button" onClick={(removeCard)} >DELETE</button>
+                <button className="button" onClick={() => { navigate('/add-card') }}>ADD CARD</button>
+            </article>
         </section >
     )
 }
