@@ -18,26 +18,25 @@ function Home(props) {
     function activeCard(e) {
         // Finding index of the clicked card and set it as active
         const activeId = allCards.findIndex((cardId => cardId.id === e.target.id));
-        setActive(activeId)
+        setActive(activeId);
     }
 
     function removeCard() {
         // If only the placeholder card remains, stop the deletefunction
         if (cards.length > 1) {
-            cards.splice(active, 1)
+            cards.splice(active, 1);
             localStorage.setItem("cards", JSON.stringify(cards));
             // If only the placeholder card remains, set it to the active card
-            setAllCards(cards)
+            setAllCards(cards);
             if (cards.length > 1) {
-                setActive(1)
+                setActive(1);
             } else {
-                setActive(0)
+                setActive(0);
             };
         } else {
-            return
+            return;
         }
-
-    }
+    };
 
     return (
         <section className='home'>
@@ -58,5 +57,5 @@ function Home(props) {
         </section >
     )
 }
-// style={{ marginTop: allCards.length > 5 ? '9rem' : 'auto' }}
+
 export default Home;

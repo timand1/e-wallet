@@ -10,25 +10,25 @@ import Ninja from './assets/vendor-ninja.svg';
 function Card(props) {
     const { allCards, activeCard } = props;
 
-    const [cardColor, setCardColor] = useState('#D0D0D0')
-    const [cardVendor, setCardVendor] = useState(Bitcoin)
+    const [cardColor, setCardColor] = useState('#D0D0D0');
+    const [cardVendor, setCardVendor] = useState(Bitcoin);
 
     useEffect(() => {
         if (allCards.vendor === 'Bitcoin') {
-            setCardColor('#FFAE34')
-            setCardVendor(Bitcoin)
+            setCardColor('#FFAE34');
+            setCardVendor(Bitcoin);
         } else if (allCards.vendor === 'Ninja') {
-            setCardColor('#222222')
-            setCardVendor(Ninja)
+            setCardColor('#222222');
+            setCardVendor(Ninja);
         } else if (allCards.vendor === 'Blockchain') {
-            setCardColor('#8B58F9')
-            setCardVendor(Blockchain)
+            setCardColor('#8B58F9');
+            setCardVendor(Blockchain);
         } else if (allCards.vendor === 'Evil') {
-            setCardColor('#F33355')
-            setCardVendor(Evil)
+            setCardColor('#F33355');
+            setCardVendor(Evil);
         } else {
-            setCardColor('#D0D0D0')
-            setCardVendor(Bitcoin)
+            setCardColor('#D0D0D0');
+            setCardVendor(Bitcoin);
         }
     }, [allCards.vendor]);
 
