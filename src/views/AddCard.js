@@ -9,7 +9,7 @@ function AddCard(props) {
         <section>
             <Top headLine={'ADD A NEW BANK CARD'} subHeadLine={'NEW CARD'} />
             <Card allCards={allCards[0]} />
-            <CardForm addNewCard={addNewCard} allCards={allCards} setNewCard={setNewCard} />
+            <CardForm addNewCard={addNewCard} setNewCard={setNewCard} />
 
         </section>
     )

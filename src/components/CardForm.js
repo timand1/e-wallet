@@ -3,7 +3,7 @@ import './CardForm.css';
 import { useState } from 'react';
 
 function CardForm(props) {
-    let { addNewCard, setNewCard, allCards } = props;
+    let { addNewCard, setNewCard } = props;
 
     const [cardHolder, setCardHolder] = useState('');
     const [cardNumber, setCardNumber] = useState('');
@@ -18,7 +18,7 @@ function CardForm(props) {
             valid: cardValid,
             ccv: cardCcv,
             vendor: cardVendor,
-            id: cardNumber + allCards.length
+            id: cardNumber + (Math.ceil(Math.random() * 100)) // To reduce the risk of the same id
         })
     };
 
