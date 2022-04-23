@@ -9,3 +9,7 @@
     display: flex;
     gap: 2rem;
 }
+
+.button-delete {
+    background: #CB2222;
+}

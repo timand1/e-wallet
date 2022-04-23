@@ -51,7 +51,7 @@ function Home(props) {
                 </article>}
             </article>
             <article className="buttons">
-                <button className="button" onClick={(removeCard)} >DELETE</button>
+                <button className="button button-delete" onClick={(removeCard)} >DELETE</button>
                 <button className="button" onClick={() => { navigate('/add-card') }}>ADD CARD</button>
             </article>
         </section >
