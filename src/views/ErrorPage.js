@@ -5,7 +5,7 @@ function ErrorPage() {
     return (
         <section>
             <h1>404</h1>
-            <button className="button" onClick={navigate('/')}>Take me back</button>
+            <button className="button" onClick={() => { navigate('/') }}>Take me back</button>
         </section>
     )
 }
