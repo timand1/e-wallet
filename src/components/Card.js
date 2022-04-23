@@ -34,8 +34,8 @@ function Card(props) {
 
     const colorStyle = { color: (allCards.vendor === 'Bitcoin' || allCards.vendor === 'AddCard') ? '#000000' : '#FFFFFF' };
     const colorStyleLabel = { color: (allCards.vendor === 'Bitcoin' || allCards.vendor === 'AddCard') ? '#000000b6' : '#ffffffa4' };
-    const cardNum = (allCards.cardnumber.substring(0, 4) + ' ' + allCards.cardnumber.substring(4, 8) + ' ' + allCards.cardnumber.substring(8, 12) + ' ' + allCards.cardnumber.substring(12, 16))
-    const validDate = (allCards.valid.length === 5) ? allCards.valid : allCards.valid.substring(2, 4) + '/' + allCards.valid.substring(5, 7);
+    const cardNum = allCards.cardnumber.replace(/\d{4}(?=.)/g, '$& ');
+    const validDate = (allCards.valid.length === 5) ? allCards.valid : allCards.valid.substring(2, 7).replace('-', '/');
 
     return (
         <section className='card'
