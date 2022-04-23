@@ -26,7 +26,7 @@ function App() {
 
   // Update local storage with all cards
   localStorage.setItem("cards", JSON.stringify(allCards));
-  // localStorage.removeItem("cards")
+
   function addNewCard(e) {
     e.preventDefault();
 
