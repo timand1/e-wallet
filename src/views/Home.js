@@ -22,16 +22,21 @@ function Home(props) {
     }
 
     function removeCard() {
-        cards.splice(active, 1)
-        localStorage.setItem("cards", JSON.stringify(cards));
-
-        // If only the placeholder card remains, set it to the active card
-        setAllCards(cards)
+        // If only the placeholder card remains, stop the deletefunction
         if (cards.length > 1) {
-            setActive(1)
+            cards.splice(active, 1)
+            localStorage.setItem("cards", JSON.stringify(cards));
+            // If only the placeholder card remains, set it to the active card
+            setAllCards(cards)
+            if (cards.length > 1) {
+                setActive(1)
+            } else {
+                setActive(0)
+            };
         } else {
-            setActive(0)
-        };
+            return
+        }
+
     }
 
     return (
